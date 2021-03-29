@@ -1,6 +1,9 @@
 <script runat="server" language="javascript">
     Response.Write('<meta charset="utf-8" />');
     var url = String(Request.ServerVariables("HTTP_X_ORIGINAL_URL"));
+    if(url.indexOf("/components/")==0){
+        Server.Transfer("/components/default.asp");
+    }
     TryAsVue( url );
     Home();
 
@@ -16,6 +19,7 @@
             return;
         }
         Response.Write("Run App :" + appName);
+        Server.Transfer(jApplications[appName]);
         return;
     }
 </script>
@@ -26,6 +30,7 @@
 
         Response.Write("<hr><br>200 Links:");
         Response.Write("<br><a href='/'>/ (Home)</a>");
+        Response.Write("<br><a href='/components'>/components</a>");
         Response.Write("<hr><br>404 Links:");
         Response.Write("<br><a href='/test'>/test</a>");
         Response.Write("<br><a href='/test?parameter-1=A&amp;parameter-2=B'>/test?parameter-1=A&amp;parameter-2=B</a>");
