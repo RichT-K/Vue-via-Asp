@@ -1,0 +1,28 @@
+.input-range{
+    position:relative;
+    text-align:center;
+    font-size:1.6em;
+    margin:1em 0em;
+}
+.input-range.buttons .input-range_control{
+    display:grid;
+    grid-gap:4px;
+    grid-template-columns:auto 1fr auto;
+}
+.input-range input{
+    font-size:inherit;
+    width:100%;
+}
+.input-range button{
+    font-size:inherit;
+}
+.input-range .input-range_overlay{
+    position:absolute;
+    pointer-events:none;
+    top:0px;
+    margin-top:0px;
+    transition:all ease .3s;
+}
+.input-range:hover .input-range_overlay{
+    opacity:.3;
+}

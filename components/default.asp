@@ -1,6 +1,5 @@
 <script runat="server" language="javascript" src="/server/src/includes/json5.server.js"></script>
 <script runat="server" language="javascript">
-    Response.Write('<meta charset="utf-8" />');
     var jComponents = {
         "comp-1":{
             template:''

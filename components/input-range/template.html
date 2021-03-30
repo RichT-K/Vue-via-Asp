@@ -1,0 +1,27 @@
+<div :class="'input-range'+(buttons?' buttons':'')"
+>
+    <div class="input-range_control">
+        <button v-if="buttons" 
+            :class="'prior '"
+            :name="dataName"
+            @click="onchange( Math.max(min||0,Math.min(max||0,parseFloat(start||0)-(step||1))) )"
+        ><span class="sr">&#x25C1; Prior</span></button>
+        <input type="range"
+            :name="dataName"
+            :min="min"
+            :max="max"
+            :step="step||1"
+            :value="start||undefined"
+            @input="(event)=>{onchange(parseFloat(event.target.value));}"
+        />
+        <button v-if="buttons"
+            :class="'next '"
+            :name="dataName"
+            @click="onchange( Math.max(min||0,Math.min(max||0,parseFloat(start||0)+(step||1))) )"
+        ><span class="sr">Next &#x25B7;</span></button>
+    </div>
+    <div v-if="overlay" 
+        class="absolute input-range_overlay" 
+        style="top:0px;width:100%;text-align:center;pointer-events:none;color:black;text-shadow:0px 0px 1px white;"
+        v-html="fnLabel?fnLabel(start):(label+' ' + start)"></div>
+</div>

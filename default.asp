@@ -1,31 +1,29 @@
 <script runat="server" language="javascript">
-    Response.Write('<meta charset="utf-8" />');
     var url = String(Request.ServerVariables("HTTP_X_ORIGINAL_URL"));
     if(url.indexOf("/components/")==0){
         Server.Transfer("/components/default.asp");
     }
-    TryAsVue( url );
-    Home();
+    TryAsVueApp( url );
+    Home(url, Request);
 
-    function TryAsVue( url ){
-        if( url.indexOf("/VUE:")  != 0 ){
+    function TryAsVueApp( path ){
+        if( path.indexOf("/VUE:")  != 0 ){
             return;
         }
-        var appName = url.substr(1).split("/")[0].split(":")[1];
+        var appName = path.substr(1).split("/")[0].split(":")[1];
         var jApplications = {
-            "App":"/Applications/App.asp"
+            "ProofOfConcept":"/Applications/ProofOfConcept.asp"
         }
         if( !jApplications[appName] ){
             return;
         }
-        Response.Write("Run App :" + appName);
         Server.Transfer(jApplications[appName]);
         return;
     }
 </script>
 <script runat="server" language="javascript">
-    function Home(){
-        Response.Write("<br>HTTP_X_ORIGINAL_URL:"+ url.replace(/\&/g,"&amp;"));
+    function Home(path, Request){
+        Response.Write("<br>HTTP_X_ORIGINAL_URL:"+ path.replace(/\&/g,"&amp;"));
         Response.Write("<br>Request.QueryString:"+String(Request.QueryString()).replace(/\&/g,"&amp;"));
 
         Response.Write("<hr><br>200 Links:");

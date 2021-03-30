@@ -1,0 +1,15 @@
+{
+    "props":[
+        "data-name",
+        "label",
+        "fnLabel",
+        "min",
+        "max",
+        "step",
+        "start",
+        "overlay",
+        "buttons",
+        "onchange",
+        "onclick"
+    ]
+}
