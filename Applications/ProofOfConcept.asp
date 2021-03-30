@@ -4,7 +4,7 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <meta name="rating" content="General">
-    <link rel="canonical" href="/VUE:App" />
+    <link rel="canonical" href="/VUE:ProofOfConcept" />
     <meta name="designer" content="Richard Kenny">
     <meta name="copyright" content="2021">
     <meta name="reply-to" content="info@USGolfers.com">
