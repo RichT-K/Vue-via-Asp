@@ -32,6 +32,7 @@
         Response.Write("<hr><br>404 Links:");
         Response.Write("<br><a href='/test'>/test</a>");
         Response.Write("<br><a href='/test?parameter-1=A&amp;parameter-2=B'>/test?parameter-1=A&amp;parameter-2=B</a>");
+        Response.Write("<br><a href='/VUE:ProofOfConcept'>/VUE:ProofOfConcept</a>");
     }
 </script>
 
