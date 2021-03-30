@@ -52,15 +52,15 @@
             max-width:600px;
         }
         .adsbygoogle{
-            display:none; 
+            display:block; 
             text-align:center;
             outline:1px solid black;
             min-width:400px;
             max-width:600px;
             max-height:150px;
         }
-        .adsbygoogle[visible=true]{
-            display:block; 
+        .adsbygoogle[visible=false]{
+            display:none; 
         }
     </style>
     <script type="application/javascript" src="/dist/less.js" ></script>
