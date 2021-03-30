@@ -55,6 +55,7 @@
             display:none; 
             text-align:center;
             outline:1px solid black;
+            min-width:400px;
             max-width:600px;
             max-height:150px;
         }
